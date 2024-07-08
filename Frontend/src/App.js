@@ -15,6 +15,7 @@ import ChangePassword from './components/ProfileScreens/ChangePassword';
 import NotFound from './components/GeneralScreens/NotFound';
 import EditStory from './components/StoryScreens/EditStory';
 import ReadListPage from './components/ProfileScreens/ReadListPage';
+import Footer from './components/GeneralScreens/Footer';
 
 const App = () => {
 
@@ -94,6 +95,7 @@ const LayoutsWithHeader =() => {
             <>
                   <Header />
                   <Outlet />
+                  <Footer />
             </>
       );
 }

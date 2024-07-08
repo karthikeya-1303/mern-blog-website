@@ -38,8 +38,7 @@ const Header = () => {
 
                 <Link to="/" className="logo">
                     <h5>
-                        MERN BLOG
-
+                        Bytes & Bites
                     </h5>
                 </Link>
                 <SearchForm />
