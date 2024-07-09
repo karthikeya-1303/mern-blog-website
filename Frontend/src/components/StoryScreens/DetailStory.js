@@ -9,6 +9,8 @@ import { FiEdit } from 'react-icons/fi'
 import { FaRegComment } from 'react-icons/fa'
 import { BsBookmarkPlus, BsThreeDots, BsBookmarkFill } from 'react-icons/bs'
 import CommentSidebar from '../CommentScreens/CommentSidebar';
+import { url} from '../../url';
+
 
 const DetailStory = () => {
   const [likeStatus, setLikeStatus] = useState(false)
@@ -28,7 +30,7 @@ const DetailStory = () => {
       setLoading(true)
       var activeUser = {}
       try {
-        const { data } = await axios.get("/auth/private", {
+        const { data } = await axios.get(`${url}/auth/private`, {
           headers: {
             "Content-Type": "application/json",
             authorization: `Bearer ${localStorage.getItem("authToken")}`,

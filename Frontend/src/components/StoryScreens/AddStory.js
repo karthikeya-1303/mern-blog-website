@@ -7,6 +7,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { AuthContext } from "../../Context/AuthContext";
 import { AiOutlineUpload } from 'react-icons/ai'
 import '../../Css/AddStory.css'
+import { url} from '../../url';
 
 const AddStory = () => {
 
@@ -35,7 +36,7 @@ const AddStory = () => {
         formdata.append("content", content)
 
         try {
-            const { data } = await axios.post("/story/addstory", formdata, config)
+            const { data } = await axios.post(`${url}/story/addstory`, formdata, config)
             setSuccess('Add story successfully ')
 
             clearInputs()

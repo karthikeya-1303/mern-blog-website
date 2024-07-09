@@ -7,7 +7,9 @@ import {
 import { BsThreeDots } from 'react-icons/bs'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { url } from '../../url';
 
+ 
 const CommentItem = ({ comment, activeUser }) => {
     const navigate = useNavigate()
     const [likeCount, setLikeCount] = useState(comment.likeCount)
@@ -19,7 +21,7 @@ const CommentItem = ({ comment, activeUser }) => {
 
             const comment_id = comment._id
             try {
-                const { data } = await axios.post(`/comment/${comment_id}/getCommentLikeStatus`, { activeUser }, {
+                const { data } = await axios.post(`${url}/comment/${comment_id}/getCommentLikeStatus`, { activeUser }, {
                     headers: {
                         "Content-Type": "application/json",
                         authorization: `Bearer ${localStorage.getItem("authToken")}`,

@@ -7,6 +7,7 @@ import CardStory from "../StoryScreens/CardStory";
 import NoStories from "../StoryScreens/NoStories";
 import Pagination from "./Pagination";
 import "../../Css/Home.css"
+import { url } from "../../url";
 
 import { useNavigate } from "react-router-dom"
 const Home = () => {
@@ -25,7 +26,7 @@ const Home = () => {
       setLoading(true)
       try {
 
-        const { data } = await axios.get(`/story/getAllStories?search=${searchKey || ""}&page=${page}`)
+        const { data } = await axios.get(`${url}/story/getAllStories?search=${searchKey || ""}&page=${page}`)
 
         if (searchKey) {
           navigate({

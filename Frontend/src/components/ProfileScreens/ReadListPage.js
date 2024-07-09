@@ -6,7 +6,7 @@ import { AuthContext } from '../../Context/AuthContext'
 import { AiFillLock } from 'react-icons/ai'
 import { BsThreeDots } from 'react-icons/bs'
 import ReadListStoryItem from '../StoryScreens/ReadListStoryItem';
-
+import { url } from '../../url';
 import '../../Css/ReadListPage.css'
 
 const ReadListPage = () => {
@@ -20,7 +20,7 @@ const ReadListPage = () => {
             setLoading(true)
 
             try {
-                const { data } = await (await axios.get(`/user/readList`, config)).data
+                const { data } = await (await axios.get(`${url}/user/readList`, config)).data
                 setReadList(data)
                 setLoading(false)
             }

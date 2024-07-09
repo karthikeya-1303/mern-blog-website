@@ -7,6 +7,8 @@ import { useNavigate, useParams, Link } from 'react-router-dom';
 import { AuthContext } from "../../Context/AuthContext";
 import { AiOutlineUpload } from 'react-icons/ai'
 import '../../Css/EditStory.css'
+import { url} from '../../url';
+
 
 const EditStory = () => {
     const { config } = useContext(AuthContext)
@@ -27,7 +29,7 @@ const EditStory = () => {
         const getStoryInfo = async () => {
             setLoading(true)
             try {
-                const { data } = await axios.get(`/story/editStory/${slug}`, config)
+                const { data } = await axios.get(`${url}/story/editStory/${slug}`, config)
                 setStory(data.data)
                 setTitle(data.data.title)
                 setContent(data.data.content)
